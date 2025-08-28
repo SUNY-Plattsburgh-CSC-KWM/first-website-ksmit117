@@ -4,14 +4,46 @@
     <meta charset="UTF-8">
     <title>Hello World Website</title>
     <script>
-        function function-name() {
+        function changeHeader() {
             // >>> put a prompt here, ask the user for a new name <<< 
+            const newName = prompt("Enter a new Header:");
+            document.getElementById("header").textContent = `Hello, ${newName}!`;
             // Use document.getElementById("your id").textContent = .... to change the level 1 header to say something new
         }
     </script>
+    <script>
+        function changeColor() {
+            // >>> put a promt here to ask user for color <<<
+            const newColor = prompt("Enter a color (e.g., red, blue, green):");
+            document.getElementById("header").style.color = newColor;
+            // Use document.getElementById("your id").style.color = .... to change the
+        }
+    </script>
+    <script>
+    function randomPosition() {
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 100);
+        const header = document.getElementById("header");
+        header.style.position = "absolute";
+        header.style.left = `${x}px`;
+        header.style.top = `${y}px`;
+    }
+</script>
+    <script>
+        function changeBackGround() {
+            const newColor = prompt("Enter a background color (e.g., red, blue, green):");
+            document.getElementById("background").style.backgroundColor = newColor;
+            // Use document.getElementById("your id").style.color = .... to change the
+        }
+    </script>
+
 </head>
 <body>
-    <h1 id="your-id-here">Hello, World!</h1>
-    <button onclick="function-name()">label-on-button</button>
+    <div id="background" style="position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:-1; color:white"></div>
+    <h1 id="header">Hello, World!</h1>
+    <button onclick="changeHeader()">Change Header</button>
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="randomPosition()">Change Position</button>
+    <button onclick="changeBackGround()">Change Background Color</button>
 </body>
 </html>
